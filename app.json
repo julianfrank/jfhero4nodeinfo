@@ -1,0 +1,11 @@
+{
+  "name": "jfhero4nodeinfo",
+  "description": "Heroku instance to test and  demonstrate jfnodeinfo",
+  "scripts": {
+  },
+  "env": {
+  },
+  "addons": [
+
+  ]
+}
