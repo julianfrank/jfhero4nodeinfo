@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/julianfrank/jfhero4nodeinfo#readme",
   "dependencies": {
-    "jfnodeinfo": "^0.1.0"
+    "jfnodeinfo": "^0.2.1"
   }
 }

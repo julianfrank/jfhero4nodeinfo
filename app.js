@@ -2,7 +2,7 @@
 
 //Imports
 var http = require('http')
-var capInventory = require('jfnodeinfo').getNodeInfo()
+var capInventory = JSON.parse(require('jfnodeinfo').getNodeInfo())
 
 //Initialisations
 var logText = ""
@@ -42,7 +42,7 @@ var server = http.createServer(function (request, response) {
     response.write("<br>V8 : <br><pre>" + JSON.stringify(capInventory.v8, undefined, 2) + "</pre>")
     response.write("<br>Process : <br><pre>" + JSON.stringify(capInventory.process, undefined, 2) + "</pre>")
     response.write("<br>Globals : <br><pre>" + JSON.stringify(capInventory.globals, undefined, 2) + "</pre>")
-    //response.write("<br>Module : <br><pre>" + JSON.stringify(capInventory.module, undefined, 2) + "</pre>")
+    response.write("<br>Module : <br><pre>" + JSON.stringify(capInventory.module, undefined, 2) + "</pre>")
 
     response.write("<br>Time to execute : <br>" + showHrTime(constructTime))
     response.write("</body>");
