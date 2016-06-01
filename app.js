@@ -4,9 +4,6 @@
 var http = require('http')
 var capInventory = JSON.parse(require('jfnodeinfo').getNodeInfo())
 
-//Initialisations
-var logText = ""
-
 // High Resolution Timer Function
 // Move to Helper Library later
 var processStartTime = process.hrtime()
@@ -18,8 +15,7 @@ function showHrTime(appStartTime) {
 // Moving all console logs into a log function
 //Move to helper later
 function log(message) {
-    logText = showHrTime(process.hrtime()) + "\t: " + message
-    console.log(logText)
+    console.log(showHrTime(process.hrtime()) + "\t: " + message)
 }
 
 log("Julian Frank's App Server with pid(" + process.pid + ") is loading")
@@ -31,9 +27,13 @@ var server = http.createServer(function (request, response) {
     response.write("<html>");
     response.write("<head>");
     response.write("<title>Julian Frank's NodeJS Environment Inventory App</title>");
+    response.write("<script>(function(e,c,a,g,f){function d(){var b=c.createElement('script');b.async=!0;b.src='//radar.cedexis.com/1/21113/radar.js';c.body.appendChild(b)}
+(function(){for(var b=[/\bMSIE (5|6)/i],a=b.length;a--;)if(b[a].test(navigator.userAgent))return!1;return!0})()&&('complete'!==c.readyState?(a=e[a])?a(f,d,!1):(a=e[g])&&a('on'+f,d):d())})
+(window,document,'addEventListener','attachEvent','load');</script>")
     response.write("</head>");
     response.write("<body>");
     response.write("Julian Frank's NodeJS Environment Inventory App<br><br>");
+    response.write("Sourcecode available on https://github.com/julianfrank/jfhero4nodeinfo<br><br>");
     response.write("You are being serviced by Worker with pid(" + process.pid + ")<br>")
     response.write("<br>request.rawHeaders : <br><pre>" + JSON.stringify(request.headers, undefined, 4) + "</pre>")
 
