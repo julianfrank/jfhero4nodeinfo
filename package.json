@@ -1,6 +1,6 @@
 {
   "name": "jfhero4nodeinfo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Heroku Instance dedicated to test and demonstrate JFnodeInfo module in npm registry",
   "main": "app.js",
   "scripts": {
@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/julianfrank/jfhero4nodeinfo#readme",
   "dependencies": {
-    "jfnodeinfo": "^0.2.1"
+    "jfnodeinfo": "^0.2.2"
   }
 }

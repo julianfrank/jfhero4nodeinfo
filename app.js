@@ -27,13 +27,17 @@ var server = http.createServer(function (request, response) {
     response.write("<html>");
     response.write("<head>");
     response.write("<title>Julian Frank's NodeJS Environment Inventory App</title>");
-    response.write("<script>(function(e,c,a,g,f){function d(){var b=c.createElement('script');b.async=!0;b.src='//radar.cedexis.com/1/21113/radar.js';c.body.appendChild(b)}
-(function(){for(var b=[/\bMSIE (5|6)/i],a=b.length;a--;)if(b[a].test(navigator.userAgent))return!1;return!0})()&&('complete'!==c.readyState?(a=e[a])?a(f,d,!1):(a=e[g])&&a('on'+f,d):d())})
-(window,document,'addEventListener','attachEvent','load');</script>")
+    response.write("<script>")
+    response.write("(function (e, c, a, g, f) {")
+    response.write("function d() { var b = c.createElement('script'); b.async = !0; b.src = '//radar.cedexis.com/1/21113/radar.js'; c.body.appendChild(b) }")
+    response.write("(function () { for (var b = [/\bMSIE (5|6)/i], a = b.length; a--;)if (b[a].test(navigator.userAgent)) return !1; return !0 })() && ('complete' !== c.readyState ? (a = e[a]) ? a(f, d, !1) : (a = e[g]) && a('on' + f, d) : d())")
+    response.write("})")
+    response.write("(window, document, 'addEventListener', 'attachEvent', 'load');")
+    response.write("</script>")
     response.write("</head>");
     response.write("<body>");
-    response.write("Julian Frank's NodeJS Environment Inventory App<br><br>");
-    response.write("Sourcecode available on https://github.com/julianfrank/jfhero4nodeinfo<br><br>");
+    response.write("<h2>Julian Frank's NodeJS Environment Inventory App</h2><br><br>");
+    response.write("Sourcecode available on <a href='https://github.com/julianfrank/jfhero4nodeinfo'>jfhero4nodeinfo@github</a><br><br>");
     response.write("You are being serviced by Worker with pid(" + process.pid + ")<br>")
     response.write("<br>request.rawHeaders : <br><pre>" + JSON.stringify(request.headers, undefined, 4) + "</pre>")
 
